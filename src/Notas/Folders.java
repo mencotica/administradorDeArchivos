@@ -1,15 +1,17 @@
 package Notas;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Folders {
 
     public void createFile (String nameFile) {
         // se debe cambiar ruta para que siempre escoja la misma carpeta sin importar el sistema operativo
-        String ruta = "/Biblioteca/" + nameFile;
+        Path ruta = Paths.get("Biblioteca", nameFile).toAbsolutePath();
         try {
-            File carpeta = new File(ruta);
+            File carpeta = ruta.toFile();
             if (!carpeta.exists()) {
                 carpeta.mkdir();
             } else {

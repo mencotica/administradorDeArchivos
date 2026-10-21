@@ -1,5 +1,5 @@
 # Salida de compilación de IntelliJ
-../out/
+out/
 
 # Archivos locales de IntelliJ
 .idea/workspace.xml

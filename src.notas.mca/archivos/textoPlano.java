@@ -2,7 +2,7 @@ package Notas;
 
 import java.io.File;
 
-public class Archives {
+public class textoPlano {
 
     public void crearHoja(String texto, String carpeta) {
         File comprobarCarpeta = new File("D:/platzi/codigo_practica/notas/administradorDeArchivos/Biblioteca/" + carpeta);

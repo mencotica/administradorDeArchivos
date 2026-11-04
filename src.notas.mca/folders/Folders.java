@@ -6,6 +6,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Folders {
+   static Path ruta = Paths.get("Biblioteca", null).toAbsolutePath();
 
     public void createFile (String nameFile) {
         // se debe cambiar ruta para que siempre escoja la misma carpeta sin importar el sistema operativo

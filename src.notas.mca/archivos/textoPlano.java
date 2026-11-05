@@ -1,11 +1,13 @@
-package Notas;
+package archivos;
+
+import util.RutaUtil;
 
 import java.io.File;
 
 public class textoPlano {
 
     public void crearHoja(String texto, String carpeta) {
-        File comprobarCarpeta = new File("D:/platzi/codigo_practica/notas/administradorDeArchivos/Biblioteca/" + carpeta);
+        File comprobarCarpeta = new File(RutaUtil.getRutaBibliotecaFile() + File.separator + carpeta);
         if (comprobarCarpeta.exists() && comprobarCarpeta.isDirectory()) {
             try {
                 File hoja = new File(carpeta, texto + ".txt");

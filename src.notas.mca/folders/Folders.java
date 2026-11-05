@@ -1,18 +1,15 @@
-package Notas;
+package folders;
+
+import util.RutaUtil;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Folders {
-   static Path ruta = Paths.get("Biblioteca", null).toAbsolutePath();
-
     public void createFile (String nameFile) {
         // se debe cambiar ruta para que siempre escoja la misma carpeta sin importar el sistema operativo
-        Path ruta = Paths.get("Biblioteca", nameFile).toAbsolutePath();
         try {
-            File carpeta = ruta.toFile();
+            File carpeta = new File(RutaUtil.getRutaBibliotecaFile() + File.separator + nameFile);
             if (!carpeta.exists()) {
                 carpeta.mkdir();
             } else {
@@ -24,7 +21,7 @@ public class Folders {
     }
 
     public void listarCarpetasPrint () {
-        File directory = new File ("D:/platzi/codigo_practica/notas/Biblioteca/");
+        File directory = new File (RutaUtil.getRutaBibliotecaFile().toURI());
 
         File [] folders = directory.listFiles(File::isDirectory);
         int index = 0;
@@ -34,9 +31,9 @@ public class Folders {
         }
     }
 
-    public String listarCarpetas (int folder) {
+    public File listarCarpetas (int folder) {
         String nameFolder = null;
-        File directory = new File ("D:/platzi/codigo_practica/notas/Biblioteca/");
+        File directory = new File (RutaUtil.getRutaBibliotecaFile().toURI());
 
         File [] folders = directory.listFiles(File::isDirectory);
         boolean condicion = false;
@@ -55,7 +52,7 @@ public class Folders {
             throw new RuntimeException(e.getMessage());
         }
 
-        String routerFile = "D:/platzi/codigo_practica/notas/Biblioteca/" + nameFolder;
+        File routerFile = new File(RutaUtil.getRutaBibliotecaFile() + File.separator + nameFolder);
         return routerFile;
     }
 

@@ -1,10 +1,8 @@
-import Notas.Folders;
+import folders.Folders;
 import util.ScannerUtil;
 
-import java.util.Scanner;
-
 public class Main {
-    private static String ruta = null;
+
     public static void main(String[] args) {
 
         var folders = new Folders();
@@ -17,11 +15,6 @@ public class Main {
             case 1 :
                 folders.createFile(ScannerUtil.captarTexto("dale un nombre a tu carpeta "));
                     break;
-            case 2 :
-                folders.listarCarpetasPrint();
-                ruta = folders.listarCarpetas(ScannerUtil.captarEntero("elige en que carpeta guardaras tu archivo"));
-                System.out.println("esta en la carpeta: " + ruta);
-                break;
         }
     }
 
